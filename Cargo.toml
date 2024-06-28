@@ -1,20 +1,23 @@
 [package]
 name = "opengr2-bevy"
-version = "0.9.0"
+version = "0.13.0"
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
 anyhow = "1.0.68"
-bevy = { version = "0.9.1", default-features = false }
-opengr2 = { version = "0.1.0", path = "../opengr2" }
 serde = "1.0.152"
+#bevy = { version = "0.13.2", default-features = false }
+bevy = { version = "0.13.2", default-features = false, features=["bevy_scene", "bevy_core_pipeline", "bevy_pbr"] }
+
+opengr2 = { version = "0.1.0", git="https://github.com/NoFr1ends/opengr2-rs" }
 
 [dev-dependencies]
-bevy = { version = "0.9.1", default-features = true }
-bevy-inspector-egui = "0.17.0"
-bevy_flycam = "0.9.0"
+bevy = { version = "0.13.2" }
+
+bevy-inspector-egui = "0.24.0"
+bevy_flycam = "0.13.0"
 
 [[example]]
 name = "granny"
